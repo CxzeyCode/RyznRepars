@@ -14,14 +14,9 @@ function showSlides() {
     setTimeout(showSlides, 5000);  // Change slide every 5 seconds
 }
 function flipCard(card) {
-    const innerCard = card.querySelector(".service-card-inner");
-    innerCard.style.transform = innerCard.style.transform === "rotateY(180deg)" ? "rotateY(0deg)" : "rotateY(180deg)";
+    card.classList.toggle("flipped");
 }
 
 function toggleSidebar() {
     document.getElementById("sidebar").classList.toggle("open");
-}
-
-function flipCard(card) {
-    card.classList.toggle("flipped");
 }
