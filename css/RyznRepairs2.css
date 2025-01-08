@@ -15,7 +15,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: url('images for website/backgroundimage.jpg') no-repeat center center fixed, var(--background-color);
+    background: url('/images for website/backgroundimage.jpg') no-repeat center center fixed, var(--background-color);
     background-size: cover;
     color: var(--box-color);
     line-height: 1.6;
