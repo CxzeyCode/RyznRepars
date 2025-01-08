@@ -1,0 +1,282 @@
+:root {
+    --background-color: #000000;  /* Black background */
+    --box-color: #ffffff;         /* White content boxes */
+    --primary-color: #000000;     /* Black text */
+    --hover-color: #87CEFA;       /* Light blue hover color */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('images for website/backgroundimage.jpg') no-repeat center center fixed, var(--background-color);
+    background-size: cover;
+    color: var(--box-color);
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+/* Main Title */
+.main-title {
+    margin: 50px 0;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: -250px;  /* Sidebar hidden initially */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: var(--box-color);
+    box-shadow: 5px 0 10px var(--shadow-color);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sidebar Open - Slide in */
+.sidebar.open {
+    left: 0;
+}
+
+/* Sidebar Links */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 15px 0;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect */
+.sidebar ul li a:hover {
+    background-color: var(--hover-color);
+    color: var(--box-color);
+    border-radius: 8px;
+}
+
+/* Menu Icon (☰) */
+.menu-icon {
+    font-size: 2rem;
+    color: var(--box-color);
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Slideshow Section */
+.slideshow-container {
+    width: 80%;
+    margin: 40px auto;
+    position: relative;
+}
+
+.slides img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+/* Individual Slides */
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Text Box Overlays */
+.text-box {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* Navigation Dots */
+.dot-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.active, .dot:hover {
+    background-color: var(--hover-color);
+}
+
+/* Fade Animation */
+.fade {
+    animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* Rounded Content Boxes (About and Socials) */
+.rounded-box {
+    background-color: var(--box-color);
+    color: var(--primary-color);
+    box-shadow: 0 6px 15px var(--shadow-color);
+    border-radius: 15px;
+    margin: 60px auto;
+    padding: 50px 40px;
+    width: 85%;
+    max-width: 900px;
+    text-align: center;
+    display: block;
+}
+
+.rounded-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.rounded-box p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    margin: 60px auto;
+    max-width: 1200px;
+}
+
+/* Flip Card Container */
+.service-card {
+    width: 300px;
+    height: 350px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* Flip Card Inner */
+.service-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Front and Back Sides */
+.service-card-front h2 {
+    color: #000000;  /* Black */
+}
+
+.service-card-front,
+.service-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    border-radius: 12px;
+    background-color: var(--box-color);
+}
+
+/* Back of the Flip Card - Center and Bold Text */
+.service-card-back {
+    transform: rotateY(180deg);
+    color: var(--primary-color);  /* Black text */
+    text-align: center;  /* Center all text */
+    font-weight: bold;   /* Make all text bold */
+}
+
+.service-card-back p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+    padding: 15px;
+}
+
+
+/* Flip Effect on Click */
+.service-card.flipped .service-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Image on Front of Flip Card */
+.service-card-front img {
+    width: 100%;
+    height: 70%;  /* Image fills part of the front */
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Text Below the Image on PC Build Card */
+.pc-build h2 {
+    margin-top: auto;
+    padding: 15px;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    background-color: var(--box-color);
+    width: 100%;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+html {
+    scroll-behavior: smooth;
+}
