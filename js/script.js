@@ -83,7 +83,7 @@ function showSlides() {
 
     dots[slideIndex - 1].classList.add("active");
 
-    setTimeout(showSlides, 4000); // Change slide every 4 seconds
+    setTimeout(showSlides, 8000); // Change slide every 4 seconds
 }
 
 document.addEventListener('DOMContentLoaded', showSlides);
