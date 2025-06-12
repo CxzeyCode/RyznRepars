@@ -260,7 +260,7 @@ body {
 /* Flip Card Inner */
 .service-card-inner {
     width: 100%;
-    height: 70%;
+    height: 1000%;
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
@@ -310,7 +310,7 @@ body {
 /* Image on Front of Flip Card */
 .service-card-front img {
     width: 100%;
-    height: 70%;  /* Image fills part of the front */
+    height: 100%;  /* Image fills part of the front */
     object-fit: cover;
     border-radius: 12px 12px 0 0;
 }
